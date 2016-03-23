@@ -20,7 +20,6 @@ RUN wget -q http://repo1.maven.org/maven2/com/github/tomakehurst/wiremock/1.57/w
 RUN apt-get install -y git && apt-get -y update && apt-get -y autoremove
 
 
-
 COPY ./startup.sh /data
 WORKDIR /data
 

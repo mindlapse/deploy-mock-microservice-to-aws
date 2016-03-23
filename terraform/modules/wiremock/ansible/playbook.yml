@@ -26,7 +26,7 @@
 
     docker:
       name: wiremock
-      image: qleap/wiremock
+      image: mindlapse/wiremock
       state: started
       expose:
         - 443:443
