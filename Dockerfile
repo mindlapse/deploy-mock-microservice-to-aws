@@ -1,6 +1,6 @@
 FROM java:9
 
-EXPOSE 443
+EXPOSE 443 8080
 
 ENV GIT_BRANCH=master \
     GIT_REPO=
