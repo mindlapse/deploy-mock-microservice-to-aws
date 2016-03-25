@@ -1,4 +1,4 @@
-# deploy-wiremock-to-aws
+# deploy-mock-microservice-to-aws
 
 ##  Use case:  
 To deploy a mock JSON based microservice into Amazon (a wiremock server),
