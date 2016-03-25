@@ -6,7 +6,7 @@ configured with mock request/response pairs from a git repo of your choice :)
 
 ## Prerequisites
 
-0) You have an Amazon AWS user account with an access key and secret access key, and SSH .pem file for that user.
+0) [Amazon AWS](https://aws.amazon.com/): You have an AWS user account with an access key and secret access key, and SSH .pem file for that user.
 
 1) [Terraform is installed](https://www.terraform.io/intro/getting-started/install.html)
 
