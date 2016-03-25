@@ -1,7 +1,7 @@
-# deploy-wiremock
+# deploy-wiremock-to-aws
 
 ##  Use case:  
-To deploy a mock JSON based micro-service into Amazon (a wiremock server),
+To deploy a mock JSON based microservice into Amazon (a wiremock server),
 configured with mock request/response pairs from a git repo of your choice :)
 
 ## Prerequisites
