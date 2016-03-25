@@ -1,7 +1,7 @@
 # deploy-mock-microservice-to-aws
 
 ##  Use case:  
-To deploy a mock JSON based microservice into Amazon (a wiremock server),
+To deploy a mock JSON based microservice into Amazon (a [WireMock](http://wiremock.org/)  server),
 configured with mock request/response pairs from a git repo of your choice :)
 
 ## Prerequisites
@@ -37,7 +37,7 @@ configured with mock request/response pairs from a git repo of your choice :)
 after configuring it to match your settings.  You'll need an access and secret key pair from Amazon, along
 with a .pem private key from an Amazon user who has sufficient privileges.   The example provided below is pointing to 
 a repo with an example set of samples - you can provide your own git repo here with your own samples, provided that it
-has the same structure as the example repo (the structure expected by WireMock)
+has the same structure as the example repo (the structure expected by [WireMock](http://wiremock.org/))
 
 
 ```javascript
