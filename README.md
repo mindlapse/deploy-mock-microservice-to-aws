@@ -75,7 +75,7 @@ variable "aws_ssh_key_path" {
 }
 ```
 
-## Execution
+## Launch
 
 All set?  Okay, run the following from the checkout folder.  Then log into Amazon and you'll see that the 
 instance is deployed with port 80 and 443 open for business.
