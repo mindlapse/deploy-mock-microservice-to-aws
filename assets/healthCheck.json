@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/healthCheck"
+  },
+  "response": {
+    "status": 200,
+    "body": "Health check PASSED - your wiremock server is up and running :)\n"
+  }
+}

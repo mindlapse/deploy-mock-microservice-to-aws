@@ -35,6 +35,12 @@ Vagrant.configure("2") do |config|
 		cd /vagrant
 		terraform get
 		terraform apply
+
+		echo Sleeping for 120 seconds while the wiremock initializes.
+		sleep 120
+		echo Performing health check
+		echo Connecting to http://`terraform output -module=wiremock ip`:80/api/healthCheck
+		curl http://`terraform output -module=wiremock ip`:80/api/healthCheck
 	END
 
 end
