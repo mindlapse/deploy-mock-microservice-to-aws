@@ -1,13 +1,13 @@
 # deploy-mock-microservice-to-aws
 
-##  Use case:  
-To deploy a mock JSON based microservice into Amazon (a [WireMock](http://wiremock.org/)  server),
+##  Purpose  
+Deploys a mock JSON based microservice into Amazon (a [WireMock](http://wiremock.org/)  server),
 configured with mock request/response pairs from a git repo of your choice.  The server will automatically
-reload itself whenever a new commit is detected on your repo.
+check for changes on that repo every minute, and will reload itself whenever a new commit is detected.
 
-For example, suppose you have a repo like https://github.com/mindlapse/redesigned-pancake.git with a mappings
-folder containing JSON files with request/response pairs that you want to mock.  You can deploy that into a live
-server in Amazon by following the steps below
+For example, suppose you have a repo like https://github.com/mindlapse/redesigned-pancake.git with a /mappings
+folder containing JSON files with request/response pairs that you want to mock (see it for an example).  
+You can deploy an instance that serves those mock responses into Amazon by following the steps below:
 
 
 ## Setup
@@ -18,9 +18,9 @@ server in Amazon by following the steps below
 
 3. The project is cloned: `git clone https://github.com/mindlapse/deploy-mock-microservice-to-aws.git`
 
-4. The `terraform.tf` file in the root of the project is configured with Amazon access keys and 
-SSH keys, the location of the Git repo containing your request/response samples for the [WireMock](http://wiremock.org/)
-server, and your preferred ec2 instance size.
+4. The `terraform.tf` file in the root of the project is configured with a user's Amazon access keys and 
+SSH keys, with the location of the Git repo containing your request/response samples for the [WireMock](http://wiremock.org/)
+server, and with your preferred EC2 instance size.
 
 ## Launch
 
@@ -28,7 +28,7 @@ Open a console, and from the project folder issue the following command to deplo
 ```bash
 vagrant up
 ```
-The mock server should be live in about 10-15 minutes.
+The mock server should be live in about 10-15 minutes, and will end with a health check showing the IP address of your new server.
 
 
 ## Destroy
