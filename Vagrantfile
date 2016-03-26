@@ -13,9 +13,14 @@ Vagrant.configure("2") do |config|
 		apt-get update
 
 		#
-		# Install NTP, Python, Ansible, Ruby
+		# Install NTP, Git, unzip, Python, Ansible, Ruby
 		#
-		apt-get install -y ntp python docker-py software-properties-common ansible ruby-full
+		apt-get install -y ntp git unzip python software-properties-common ansible ruby-full
+		apt-get install -y python python-pip python-dev build-essential
+        pip install --upgrade pip
+        pip install --upgrade virtualenv
+		pip install docker-py
+		apt-get -y autoremove
 
 		#
 		# Install Terraform
@@ -25,14 +30,11 @@ Vagrant.configure("2") do |config|
 		unzip -oq terraform_0.6.14_linux_amd64.zip -d /opt/terraform
 		rm -f terraform_0.6.14_linux_amd64.zip
 		echo "export PATH=$PATH:/opt/terraform" >> /etc/bash.bashrc
-
-		apt-get -y autoremove
-
-		cp /vagrant/deployMock /usr/local/bin
-		chmod ugo+x /usr/local/bin/deployMock
+		export PATH=$PATH:/opt/terraform
 
 		cd /vagrant
 		terraform get
+		terraform apply
 	END
 
 end

@@ -30,7 +30,7 @@ variable "aws_ssh_key_name" {
 
 variable "aws_ssh_key_path" {
   description = "The path to your ssh key pair .pem file (e.g. '/vagrant/masterkey.pem')"
-  default = "~/terraform.pem"
+  default = "./terraform.pem"
 }
 
 
