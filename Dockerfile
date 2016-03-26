@@ -14,13 +14,26 @@ RUN mkdir /opt/wiremock /data
 WORKDIR /opt/wiremock
 RUN wget -q http://repo1.maven.org/maven2/com/github/tomakehurst/wiremock/1.57/wiremock-1.57-standalone.jar
 
+
 #
-# Install git, update and cleanup
+# Install git, supervisor and cron, update, and cleanup
 #
-RUN apt-get install -y git && apt-get -y update && apt-get -y autoremove
+RUN apt-get -y update && \
+	apt-get install -y git cron supervisor && \
+	apt-get -y autoremove
 
 
-COPY ./startup.sh /data
+#
+# Copy the startup and refresh script to /data
+#
+COPY ./startup.sh ./refresh_samples_cron.sh /data/
+
+
+#
+# Configure supervisor to manage the wiremock process
+#
+COPY ./supervisord.conf /etc/supervisor/conf.d/
+
 WORKDIR /data
 
 CMD ["./startup.sh"]
