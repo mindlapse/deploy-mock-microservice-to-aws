@@ -26,13 +26,13 @@ RUN apt-get -y update && \
 #
 # Copy the startup and refresh script to /data
 #
-COPY ./startup.sh ./refresh_samples_cron.sh /data/
+COPY ./assets/startup.sh ./assets/refresh_samples_cron.sh /data/
 
 
 #
 # Configure supervisor to manage the wiremock process
 #
-COPY ./supervisord.conf /etc/supervisor/conf.d/
+COPY ./assets/supervisord.conf /etc/supervisor/conf.d/
 
 WORKDIR /data
 

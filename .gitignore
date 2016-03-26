@@ -2,3 +2,4 @@
 .pem
 .ppk
 /variables.tf
+terraform.tf
