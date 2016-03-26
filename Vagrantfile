@@ -40,7 +40,8 @@ Vagrant.configure("2") do |config|
 		sleep 120
 		echo Performing health check
 		echo Connecting to http://`terraform output -module=wiremock ip`:80/api/healthCheck
-		curl http://`terraform output -module=wiremock ip`:80/api/healthCheck
+		echo Health check result:
+		curl -s http://`terraform output -module=wiremock ip`:80/api/healthCheck
 	END
 
 end
