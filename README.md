@@ -2,7 +2,8 @@
 
 ##  Use case:  
 To deploy a mock JSON based microservice into Amazon (a [WireMock](http://wiremock.org/)  server),
-configured with mock request/response pairs from a git repo of your choice :)
+configured with mock request/response pairs from a git repo of your choice.  The server will automatically
+reload itself whenever a new commit is detected on your repo.
 
 For example, suppose you have a repo like https://github.com/mindlapse/redesigned-pancake.git with a mappings
 folder containing JSON files with request/response pairs that you want to mock.  You can deploy that into a live

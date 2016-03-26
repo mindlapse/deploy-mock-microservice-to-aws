@@ -13,9 +13,15 @@ LATEST_COMMIT=`git rev-parse HEAD`
 
 # echo "`date` prior: $PRIOR_COMMIT latest: $LATEST_COMMIT" | tee --append /data/refresh_samples_cron.log
 
+if [[ "$PRIOR_COMMIT" == "" ]]; then
+	echo $LATEST_COMMIT > /data/lastCommit
+	PRIOR_COMMIT=$LATEST_COMMIT
+	echo Repo is currently at commit $LATEST_COMMIT >> /data/refresh_samples_cron.log
+fi
+
 if [[ "$LATEST_COMMIT" != "$PRIOR_COMMIT" ]]; then
-        echo $LATEST_COMMIT > /data/lastCommit
-        kill -9 `supervisorctl pid wiremock`
-        echo `date`: Restarted wiremock with samples from commit $LATEST_COMMIT >> /data/refresh_samples_cron.log
+	echo $LATEST_COMMIT > /data/lastCommit
+	kill -9 `supervisorctl pid wiremock`
+	echo `date`: Restarted wiremock with samples from commit $LATEST_COMMIT >> /data/refresh_samples_cron.log
 fi
 

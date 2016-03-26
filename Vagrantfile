@@ -13,9 +13,9 @@ Vagrant.configure("2") do |config|
 		apt-get update
 
 		#
-		# Install NTP, Git, unzip, Python, Ansible, Ruby
+		# Install NTP, Git, unzip, Python, Ansible
 		#
-		apt-get install -y ntp git unzip python software-properties-common ansible ruby-full
+		apt-get install -y ntp git unzip python software-properties-common ansible
 		apt-get install -y python python-pip python-dev build-essential
         pip install --upgrade pip
         pip install --upgrade virtualenv
@@ -36,8 +36,8 @@ Vagrant.configure("2") do |config|
 		terraform get
 		terraform apply
 
-		echo Sleeping for 120 seconds while the wiremock initializes.
-		sleep 120
+		echo Sleeping for 60 seconds while the wiremock initializes.
+		sleep 60
 		echo Performing health check
 		echo Connecting to http://`terraform output -module=wiremock ip`:80/api/healthCheck
 		echo Health check result:

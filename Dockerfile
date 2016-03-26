@@ -24,15 +24,15 @@ RUN apt-get -y update && \
 
 
 #
+# Configure supervisor to manage the wiremock process
+#
+COPY ./assets/supervisord.conf /etc/supervisor/conf.d/
+
+#
 # Copy the startup and refresh script to /data
 #
 COPY ./assets/wiremockContainerStartup.sh ./assets/refresh_samples_cron.sh ./assets/healthCheck.json /data/
 
-
-#
-# Configure supervisor to manage the wiremock process
-#
-COPY ./assets/supervisord.conf /etc/supervisor/conf.d/
 
 WORKDIR /data
 
