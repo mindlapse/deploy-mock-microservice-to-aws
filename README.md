@@ -1,7 +1,7 @@
 # deploy-mock-microservice-to-aws
 
 ##  Purpose  
-Deploys a mock JSON based microservice into Amazon (a [WireMock](http://wiremock.org/)  server),
+Creates and deploys a mock JSON based microservice into Amazon (a [WireMock](http://wiremock.org/)  server),
 configured with mock request/response pairs from a git repo of your choice.  The server will automatically
 check for changes on that repo every minute, and will reload itself whenever a new commit is detected.
 
