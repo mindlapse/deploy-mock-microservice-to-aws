@@ -6,7 +6,7 @@ configured with mock request/response pairs from a git repo of your choice.  The
 check for changes on that repo every minute, and will reload itself whenever a new commit is detected.
 
 For example, suppose you have a repo like https://github.com/mindlapse/redesigned-pancake.git with a /mappings
-folder containing JSON files with request/response pairs that you want to mock (see it for an example).  
+folder containing JSON files with request/response pairs that you want to mock (see it for an example or [here](http://wiremock.org/stubbing.html) for more info).  
 You can deploy an instance that serves those mock responses into Amazon by following the steps below:
 
 
